@@ -1,0 +1,11 @@
+(display
+  (run 1 (q) (eval-expo
+    '(let ((f
+      (lambda (f n c p)
+        (if (eq? n c)
+            (* p c)
+            (f f n (+ c (1)) (* p c))))))
+      (f f (7) (1) (1)))
+    '() q)))
+(newline)
+
