@@ -13,12 +13,26 @@ Here is how you can compute the factorial of 7 (higher numbers take a long time)
 ```scheme
   (run 1 (q) (eval-expo
     '(let ((f
-      (lambda (f n c p)
-        (if (eq? n c)
-            (* p c)
-            (f f n (+ c (1)) (* p c))))))
+       (lambda (f n c p)
+         (if (eq? n c)
+             (* p c)
+             (f f n (+ c (1)) (* p c))))))
       (f f (7) (1) (1)))
     '() q))
+```
+
+You can run this backwards, too. For example, put q in for n, and find out
+what n you would need to get 24:
+
+```scheme
+  (run 1 (q) (eval-expo 
+    `(let ((f
+       (lambda (f n c p)
+         (if (eq? n c)
+           (* p c)
+           (f f n (+ c (1)) (* p c))))))
+      (f f ,q (1) (1)))
+    '() '(2 4)))
 ```
 
 This requires miniKanren, whick you can find here:
