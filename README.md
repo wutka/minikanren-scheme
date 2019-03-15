@@ -21,3 +21,8 @@ Here is how you can compute the factorial of 7 (higher numbers take a long time)
     '() q))
 ```
 
+This requires miniKanren, whick you can find here:
+https://github.com/webyrd/miniKanren-with-symbolic-constraints
+
+The hangouts are here:
+https://www.youtube.com/watch?v=vRrgaibcTYs&list=PLO4TbomOdn2eGFBHHHZpwo2o82e8Tv6gI
